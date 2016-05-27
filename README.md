@@ -30,7 +30,6 @@
    được gán cho những thứ mà sẽ thay đổi khi app được clone về và run trên
    các máy chủ khác và do người run code tự quy định:
 
-        # configuration
         DATABASE = '/tmp/flaskr.db'
         DEBUG = True
         SECRET_KEY = 'development key'

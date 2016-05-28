@@ -1,8 +1,10 @@
 # Flask_Basic
 
-* Step 1: Database Schema
+* Step 1: Database Schema /ˈskiːmə/ http://www.oxforddictionaries.com/definition/english/schema
  - Đầu tiên ta sẽ tạo 1 database schema, ở đây tôi dùng SQLite vì nó rất đơn
  giản. Chỉ cần đưa đoạn code sau đây vào file, giả sử schema.sql:
+
+```
 
          drop table if exists entries;
 
@@ -16,10 +18,11 @@
 
          );
 
- - Ý nghĩa của đoạn code trên là nó sẽ kiểm tra, nếu chưa tồn tại table
- entries thì nó sẽ tạo table. Schema là 1 table gồm 3 column, đầu tiên là id,
-  nó sẽ tự động sinh ra id cho mỗi lần insert, thứ 2, 3 là title và text,
-  field của 2 column này là text và nó phải có giá trị (not null). Để sử dụng
+```
+
+ - Đoạn code trên kiểm tra, nếu chưa tồn tại table entries thì nó sẽ tạo table. Table này gồm 3 column, đầu tiên là id,
+  SQLite sẽ tự động sinh ra id cho mỗi lần insert, thứ 2, 3 là title và text,
+  field của 2 column này là text và phải có giá trị (not null). Để sử dụng
    schema này tạo ra table bằng cách nào thì ta sẽ tìm hiểu trong các step
    tiếp theo.
 
@@ -30,11 +33,15 @@ config, ở đây tôi đặt tên file là settings.py. Nó sẽ là các biế
 được gán cho những thứ mà sẽ thay đổi khi app được clone về và run trên
 các máy chủ khác và do người run code tự quy định:
 
+```
+
                     DATABASE = '/tmp/flaskr.db'
                     DEBUG = True
                     SECRET_KEY = 'development key'
                     USERNAME = 'admin'
                     PASSWORD = 'default'
+                    
+```
 
 * Step 3: Cấu hình APP
  - Chúng ta sẽ tạo 1 file run app, tôi đặt tên là flaskr.py. Trong đó ta sẽ
